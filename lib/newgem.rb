@@ -1,1 +1,1 @@
-require "newgem/awesome"
+require "newgem/version"

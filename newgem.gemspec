@@ -4,27 +4,27 @@ Gem::Specification.new do |s|
   s.name        = "newgem"
   s.version     = NewGem::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Carl Lerche", "Yehuda Katz"]
-  s.email       = ["carlhuda@engineyard.com"]
-  s.homepage    = "http://github.com/carlhuda/newgem"
-  s.summary     = "A new gem templates"
-  s.description = "You're definitely going to want to replace a lot of this"
+  s.authors     = ["Nikola Chochkov" ]
+  s.email       = ["nikola@howkul.info"]
+  s.homepage    = "http://github.com/chochkov/newgem"
+  s.summary     = ""
+  s.description = ""
 
   s.required_rubygems_version = ">= 1.3.6"
 
-  # lol - required for validation
-  s.rubyforge_project         = "newgem"
+  s.add_development_dependency 'guard',      '>= 1.6.2'
+  s.add_development_dependency 'pry',        '>= 0.9.10'
+  s.add_development_dependency 'pry-doc',    '>= 0.4.4'
+  s.add_development_dependency 'rake',       '>= 10.0.4'
+  s.add_development_dependency 'rspec',      '>= 2.13'
 
-  # If you have other dependencies, add them here
-  # s.add_dependency "another", "~> 1.2"
+  s.require_paths = ['lib']
 
-  # If you need to check in files that aren't .rb files, add them here
-  s.files        = Dir["{lib}/**/*.rb", "bin/*", "LICENSE", "*.md"]
-  s.require_path = 'lib'
+  s.files       = `git ls-files`.split("\n")
+  s.test_files  = `git ls-files -- {spec}/*`.split("\n")
+  s.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
 
-  # If you need an executable, add it here
-  # s.executables = ["newgem"]
-
-  # If you have C extensions, uncomment this line
+  # If you have C extensions, uncomment these:
   # s.extensions = "ext/extconf.rb"
+  # s.require_paths << ['ext']
 end
